@@ -1,10 +1,9 @@
 <template>
 <nav>
   <a>
-    <img src = ".../assets/logo.png" alt="Sparring Bear Logo">
+    <img src="../assets/logo.png" alt="Sparring Bear Logo" width="100%" height="100">
   </a>
 </nav>
-  
 </template>
 
 <script>
