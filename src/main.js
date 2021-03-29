@@ -12,6 +12,6 @@ new Vue({
   el: '#app',
   router,
   vuetify,
-  components: { App },
+  components: {App},
   template: '<App/>'
 })

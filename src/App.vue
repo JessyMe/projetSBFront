@@ -1,21 +1,21 @@
 <template>
   <div id="app">
-    <the-header></the-header>
-    <div>
-      <user-register-form></user-register-form>
-    </div>
+    <v-app>
+      <v-main>
+        <the-header></the-header>
+        <router-view></router-view>
+      </v-main>
+    </v-app>
   </div>
 </template>
 
 <script>
 import TheHeader from './components/TheHeader.vue'
-import UserRegisterForm from './components/User/UserRegisterForm.vue'
 
 export default {
   name: 'App',
   components: {
-    TheHeader,
-    UserRegisterForm
+    TheHeader
   }
 }
 </script>

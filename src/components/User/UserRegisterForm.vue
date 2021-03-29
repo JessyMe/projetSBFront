@@ -1,41 +1,41 @@
 <template>
-    <div class="d-flex flex-row">
-        <form  class="d-flex flex-column w-50">
-          <div class="form-group">
+    <v-container fluid>
+        <v-form>
+          <v-container fluid>
             <label>Email address</label>
-            <input v-model.lazy="form.email" novalidate="true" type="email" class="form-control" placeholder="Enter email">
-          </div>
-          <div class="form-group">
+            <v-input  novalidate="true" type="email" v-model="form.email" class="form-control"></v-input>
+          </v-container>
+          <v-container fluid>
             <label>Password</label>
-            <input v-model.lazy="form.password" type="password" class="form-control" placeholder="Password">
-          </div>
-          <div class="form-group">
+            <v-input  type="password" class="form-control" v-model.lazy="form.password"></v-input>
+          </v-container>
+          <v-container fluid>
             <label>Pseudo</label>
-            <input v-model.lazy="form.username" type="text" class="form-control" placeholder="pseudo">
-          </div>
-          <div class="form-group">
+            <v-input  type="text" class="form-control" v-model.lazy="form.username"></v-input>
+          </v-container>
+          <v-container fluid>
             <label>Prénom</label>
-            <input v-model.lazy="form.name" type="text" class="form-control" placeholder="Prenom">
-          </div>
-          <div class="form-group">
+            <v-input  type="text" class="form-control" v-model.lazy="form.name"></v-input>
+          </v-container>
+          <v-container fluid>
             <label>Nom</label>
-            <input v-model.lazy="form.surname" type="text" class="form-control" placeholder="nom">
-          </div>
-          <button  class="btn btn-primary">Submit</button>
-        </form>
-        <div class="w-50 d-flex flex-row justify-content-center align-items-center">
-          <pre>{{ $data }}</pre>
-        </div>
-    </div>
+            <v-input type="text" class="form-control" v-model.lazy="form.surname"></v-input>
+          </v-container>
+          <v-container fluid>
+          <v-btn submit color="orange">Submit</v-btn>
+          <v-btn reset color="grey">Cancel</v-btn>
+          </v-container>
+          <pre>{{ $data.form }}</pre>
+        </v-form>
+    </v-container>
 </template>
 
 <script>
 export default ({
-  name: 'UserRegisterForm',
+  name: 'user-register-form',
   data () {
     return {
-      form:
-      {
+      form: {
         email: '',
         password: '',
         username: '',
@@ -43,15 +43,13 @@ export default ({
         surname: ''
       }
     }
+  },
+  created () {
+    console.log(this)
+    console.log(this.form)
   }
-  /* methods:
-  {
-      submitForm (e) {
-      e.preventDefault()
-      console.log({...this.form})
-    }
-  } */
 })
+
 </script>
 <script scoped>
 </script>
