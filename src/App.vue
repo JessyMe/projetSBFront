@@ -3,7 +3,9 @@
     <v-app>
       <v-main>
         <the-header></the-header>
-        <user-register-form></user-register-form>
+        <v-container>
+          <router-view></router-view>
+        </v-container>
       </v-main>
     </v-app>
   </div>
@@ -11,13 +13,11 @@
 
 <script>
 import TheHeader from './components/TheHeader.vue'
-import UserRegisterForm from './components/User/UserRegisterForm.vue'
 
 export default {
   name: 'App',
   components: {
-    TheHeader,
-    UserRegisterForm
+    TheHeader
   }
 }
 </script>
