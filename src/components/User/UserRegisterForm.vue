@@ -58,7 +58,8 @@ export default ({
         surname: ''
       },
       errors: [],
-      registered: false
+      registered: false,
+      apiErrors: ''
     }
   },
   methods: {
@@ -95,12 +96,17 @@ export default ({
       if (this.errors.length === 0) {
         api.post(urlApi + '/users', {...this.form})
           .then(response => console.log(response))
-          .catch(error => console.log(error))
+          .catch(error => this.handleApiErrorMessage(error.response.data))
       }
       console.log(this.errors)
+      console.log(this.apiErrors)
     },
     reset () {
       this.errors = []
+    },
+    handleApiErrorMessage (error) {
+      console.log('je suis dans handleApi')
+      console.log(error)
     }
   }
 })
