@@ -4,10 +4,11 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import vuetify from './plugins/vuetify/vuetify.js' // path to vuetify export
-import axios from 'axios'
+import api from './plugins/api/api.js'
+import 'es6-promise/auto'
 
 Vue.config.productionTip = false
-Vue.prototype.$http = axios
+Vue.prototype.$http = api
 
 /* eslint-disable no-new */
 new Vue({
